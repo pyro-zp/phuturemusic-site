@@ -431,7 +431,7 @@ function initWaveNoise() {
     function modulateVolume() {
         if (!gainNode) return;
         const t = (audioContext.currentTime - startTime);
-        const lfo = 0.04 + 0.025 * Math.sin(t * Math.PI * 2 * 1.5);
+        const lfo = 0.04 + 0.025 * Math.sin(t * Math.PI * 2 * 0.15);
         gainNode.gain.linearRampToValueAtTime(lfo, audioContext.currentTime + 0.05);
         requestAnimationFrame(modulateVolume);
     }
